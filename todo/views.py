@@ -18,11 +18,11 @@ class AppLoginView(LoginView):
     
     def get_success_url(self):
         return reverse_lazy('list')
-        
+
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('list')
-        return super(AppRegisterView, self).get(*args, **kwargs)
+        return super(AppLoginView, self).get(*args, **kwargs)
 
 class AppRegisterView(FormView):
     template_name = 'todo/register.html'
