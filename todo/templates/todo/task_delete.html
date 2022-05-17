@@ -1,0 +1,9 @@
+{% extends "todo/base.html" %}
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Deleting this task is permanent (that means FOREVER!). Are you sure?</p>
+    <h4>{{task}}</h4>
+    <input type="submit" value="Delete">
+</form>
+{% endblock content %}
